@@ -10,13 +10,10 @@
 <body>
     <header class="responsive-header">
         <div class="header-container">
-
             <h1 class="logo">
-                <img src="profes.png" alt="TravelZ_AI_Explorer" class="header-logo">
+                <img src="Logo.png" alt="TravelZ_AI_Explorer" class="header-logo">
             </h1>
-    
-
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="package.html">Packages</a></li>
@@ -27,9 +24,7 @@
                     <li><a href="Review.html">Review</a></li>
                 </ul>
             </nav>
-    
-
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <button class="hamburger-menu" aria-label="Toggle Navigation" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -156,6 +151,16 @@
         <p>Sambar deer are found in almost every corner of India, but they are mainly concentrated in central India. They can be easily spotted at Kaziranga National Park, especially in the Kohora, Bagori, Agaratoli, and Bura-Pahar ranges. The deer population is about 3,000, according to the forest department census.</p>
 </div>
 </section>
+<script>
 
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        var navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+        } else {
+            navMenu.classList.add('show');
+        }
+    });
+</script>
 </body>
 </html>
