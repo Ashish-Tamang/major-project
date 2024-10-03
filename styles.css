@@ -203,3 +203,47 @@ footer {
         padding: 1px;
     }
 }
+
+.nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex; /* Show menu by default on larger screens */
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger button on larger screens */
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu.show {
+    display: flex; /* Show menu on click for smaller screens */
+}

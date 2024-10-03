@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaziranga National Park Booking</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.js">
 </head>
 <body>
     <header class="responsive-header">
         <div class="header-container">
-
             <h1 class="logo">
-                <img src="profes.png" alt="TravelZ_AI_Explorer" class="header-logo">
+                <img src="Logo.png" alt="TravelZ_AI_Explorer" class="header-logo">
             </h1>
-    
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="package.html">Packages</a></li>
@@ -26,8 +23,7 @@
                     <li><a href="Review.html">Review</a></li>
                 </ul>
             </nav>
-    
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <button class="hamburger-menu" aria-label="Toggle Navigation" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -198,6 +194,17 @@ Central : Only Access to the Kohora Safari Zone, it is applicable for VIP and Fo
         </div>
     </div>
 </section>
+<script>
+
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        var navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+        } else {
+            navMenu.classList.add('show');
+        }
+    });
+</script>
 
 </body>
 </html>     
