@@ -12,9 +12,9 @@
     <header class="responsive-header">
         <div class="header-container">
             <h1 class="logo">
-                <img src="profes.png" alt="TravelZ_AI_Explorer" class="header-logo">
+                <img src="Logo.png" alt="TravelZ_AI_Explorer" class="header-logo">
             </h1>
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="package.html">Packages</a></li>
@@ -25,7 +25,7 @@
                     <li><a href="Review.html">Review</a></li>
                 </ul>
             </nav>
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <button class="hamburger-menu" aria-label="Toggle Navigation" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -83,51 +83,30 @@
                 <p>Family Room (3,200)</p>
                 <a href="Western.html">More Photos</a>
             </div>
-        </div>
-        
-        <div class="hotel-card">
-                <img src="Green paradise.jpg" alt="Luxe Properties in India">
-                <div class="hotel-info">
-                    <h3>Green Paradise Lodge</h3>
-                    <p>Explore by luxury brands, themes & top picks.</p>
-                    <a href="index.html">More Photos</a>
-                </div>
             </div>
+    
+        <div class="hotel-card">
+            <img src="Do.jpg" alt="Luxe Properties in India">
+            <div class="hotel-info">
+                <h3>Dohikotora Eco Camp </h3>
+                <p>Quatage Room (1,800)</p>
+                <p>Dometry (500) Per Person</p>
+                <a href="Dohikotora.html">More Photos</a>
+            </div>
+            </div>
+    </section>
 
-                <div class="hotel-card">
-                    <img src="green.jpg" alt="Luxe Properties in India">
-                    <div class="hotel-info">
-                        <h3>Green And Hills</h3>
-                        <p>Explore by luxury brands, themes & top picks.</p>
-                        <a href="index.html">More Photos</a>
-                    </div>
-                </div>
-                </section>
-                <section class="hotel-section">
-                    <div class="hotel-card">
-                        <img src="green.jpg" alt="Luxe Properties in India">
-                        <div class="hotel-info">
-                            <h3>Green And Hills</h3>
-                            <p>Explore by luxury brands, themes & top picks.</p>
-                            <a href="index.html">More Photos</a>
-                        </div>
-                    </div>
-                        <div class="hotel-card">
-                            <img src="green.jpg" alt="Luxe Properties in India">
-                            <div class="hotel-info">
-                                <h3>Green And Hills</h3>
-                                <p>Explore by luxury brands, themes & top picks.</p>
-                                <a href="index.html">More Photos</a>
-                            </div>
-                        </div>
-                            <div class="hotel-card">
-                                <img src="green.jpg" alt="Luxe Properties in India">
-                                <div class="hotel-info">
-                                    <h3>Green And Hills</h3>
-                                    <p>Explore by luxury brands, themes & top picks.</p>
-                                    <a href="index.html">More Photos</a>
-                                </div>
-                            </div>
-    <!-- Hotel Section End -->
+            <script>
+
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+    var navMenu = document.getElementById('navMenu');
+    if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+    } else {
+        navMenu.classList.add('show');
+    }
+});
+</script>
+                        
 </body>
 </html>

@@ -10,12 +10,10 @@
 <body>
     <header class="responsive-header">
         <div class="header-container">
-
             <h1 class="logo">
-                <img src="profes.png" alt="TravelZ_AI_Explorer" class="header-logo">
+                <img src="Logo.png" alt="TravelZ_AI_Explorer" class="header-logo">
             </h1>
-    
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="package.html">Packages</a></li>
@@ -26,8 +24,7 @@
                     <li><a href="Review.html">Review</a></li>
                 </ul>
             </nav>
-    
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <button class="hamburger-menu" aria-label="Toggle Navigation" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,7 +33,7 @@
     </header>
     <section style="padding: 10px;"  id="home" style="margin-top: 20px;">
         <div class="mySlides fade" style="overflow: hidden; position: relative;">
-            <img src="c.jpeg" alt="Kaziranga National Park" class="hero-image" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 10px;">
+            <img src="c.webp" alt="Kaziranga National Park" class="hero-image" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 10px;">
         </div>
     </section>
 
@@ -49,12 +46,25 @@
     </P>
     <p>TravelZ_AI_Explorer</p>
     <p>Phone Number : 9707428194 or 8812810601</p>
-    <p>G-Mail : travelzaiexplorer@gamil.com
+    <p>G-Mail : travelzaiexplorer@gmail.com
     </p>
     <p>Instagram : TravelZ_AI_Explorer</p>
     <p>To know more!</p>
-    <button class="btn btn-primary btn-lg">Send Us a Message</button>
+    <p>Feel Free to Contact us!</p>
+
 
 </section>
+<script>
+
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        var navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+        } else {
+            navMenu.classList.add('show');
+        }
+    });
+</script>
+
 </body>
 </html>

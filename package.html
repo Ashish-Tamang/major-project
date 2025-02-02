@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaziranga National Park Booking</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.js">
 </head>
 <body>
     <header class="responsive-header">
         <div class="header-container">
-
             <h1 class="logo">
-                <img src="profes.png" alt="TravelZ_AI_Explorer" class="header-logo">
+                <img src="Logo.png" alt="TravelZ_AI_Explorer" class="header-logo">
             </h1>
-    
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="package.html">Packages</a></li>
@@ -26,8 +23,7 @@
                     <li><a href="Review.html">Review</a></li>
                 </ul>
             </nav>
-    
-            <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <button class="hamburger-menu" aria-label="Toggle Navigation" id="hamburgerMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,7 +32,7 @@
     </header>
     <section style="padding: 10px;"  id="home" style="margin-top: 20px;">
         <div class="mySlides fade" style="overflow: hidden; position: relative;">
-            <img src="Package.png" alt="Kaziranga National Park" class="hero-image" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 10px;">
+            <img src="Package.webp" alt="Kaziranga National Park" class="hero-image" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 10px;">
         </div>
     </section>
 
@@ -44,13 +40,14 @@
         <h2> Kaziranga Tourism Packages : </h2>
         <p>Welcome to the Packages section for Kaziranga National Park. Here, tourists can book jeep safaris and elephant rides by exploring the available packages. We offer packages in four ranges: Bagori (Western Zone), Kohora (Central Zone), Agaratoli (Eastern Zone), and Burapahar (Ghorakati Zone). For the elephant safari, we have two zones: Bagori (Western Zone) and Kohora (Central Zone). All our packages for Kaziranga National Park are managed according to the guidelines of the Kaziranga Forest Department. We prioritize safety by strictly following the rules and regulations of Kaziranga.</p>
     </section>
-
+    <section style="text-align: center;">
+    <div class="image-container" style="flex: 1;">
+        <a>
+            <img src="g1.jpeg" alt="Jeep Safari" style="width: 150%; height: auto;" class="side-by-side-image">
+        </a>
+    </div>
+</section>
     <section id="image" style="display: flex; align-items: center;">
-        <div class="image-container" style="flex: 1;">
-            <a>
-                <img src="g1.jpeg" alt="Jeep Safari" style="width: 150%; height: auto;" class="side-by-side-image">
-            </a>
-        </div>
         <div class="text-container" style="flex: 1; padding-left: 0px;">
             <h2>Kaziranga Jeep Safari Price list : </h2>
             <p>Experience the thrill of a Jeep Safari in Kaziranga National Park. Our guided tours take you through the most stunning landscapes, where you can spot the one-horned rhinoceros, wild elephants, and a variety of exotic birds. Book your adventure today and witness nature like never before!</p>
@@ -85,7 +82,8 @@ Ghorakati: INR 7,500</p>
 <section>
     <div style="text-align: center;">
         <li>
-            <a href="googel.com" style="color: rgb(0, 0, 0); text-decoration: underline">Book Now</a>
+            <a href="Contact.html" style="color: rgb(0, 0, 0); text-decoration: underline">Click to Book.</a>
+
 
         </li>
     </div>
@@ -130,13 +128,14 @@ Ghorakati: INR 7,500</p>
         The Agaratoli Range, located on the eastern side of Kaziranga National Park near Agaratoli village, is popular for its untouched beauty and diverse wildlife. It's a favorite spot for adventure enthusiasts and wildlife photographers. Visitors can spot rhinoceroses, wild buffalo, and elephants during Jeep safaris, which are the only way to explore this zone, as there are no elephant safaris available.
     </p>
 </section>  
-
-<section id="image" style="display: flex; align-items: center;">
-    <div class="image-container" style="flex: 1;">
+<section style="text-align: center;">
+    <div class="image-container" style="flex: 1;"></div>
         <a>
-            <img src="g2.jpg" alt="Jeep Safari" style="width: 150%; height: auto;" class="side-by-side-image">
+            <img src="g2.jpg" alt="Jeep Safari" style="width: 200%; height: auto;" class="side-by-side-image">
         </a>
     </div>
+</section>
+<section id="image" style="display: flex; align-items: center;">
     <div class="text-container" style="flex: 1; padding-left: 0px;">
         <h2>Kaziranga Elephant Safari Price list : </h2>
         <p>Do you want to experience an Elephant Jungle Safari? If you love adventure, try an Elephant Safari in Kaziranga National Park’s tropical forests, rocky areas, and tall grass. You'll enjoy a ride at a height of 9 to 10 feet, taking in the views during the jungle safari, including the famous one-horned rhino and other wildlife. Riding a majestic elephant is the best way to fully experience this incredible wildlife tour.</p>
@@ -169,7 +168,7 @@ Central : Only Access to the Kohora Safari Zone, it is applicable for VIP and Fo
 <section>
 <div style="text-align: center;">
     <li>
-        <a href="googel.com" style="color: rgb(0, 0, 0); text-decoration: underline">Book Now</a>
+        <a href="Contact.html" style="color: rgb(0, 0, 0); text-decoration: underline">Click to Book.</a>
 
     </li>
 </div>
@@ -198,6 +197,17 @@ Central : Only Access to the Kohora Safari Zone, it is applicable for VIP and Fo
         </div>
     </div>
 </section>
+<script>
+
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        var navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+        } else {
+            navMenu.classList.add('show');
+        }
+    });
+</script>
 
 </body>
 </html>     
