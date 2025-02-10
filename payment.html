@@ -51,6 +51,17 @@
     </section>
 
     <br>
+    <script>
+
+        document.getElementById('hamburgerMenu').addEventListener('click', function() {
+            var navMenu = document.getElementById('navMenu');
+            if (navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+            } else {
+                navMenu.classList.add('show');
+            }
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 TravelZ_AI_Explorers. All rights reserved.</p>
