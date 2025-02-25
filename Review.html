@@ -6,6 +6,7 @@
     <title>Review - Kaziranga National Park Booking</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="review.css">
+
 </head>
 <body>
     <header class="responsive-header">
@@ -44,37 +45,28 @@
     </section>
     <section style="text-align: left;">
     <main class="review-container">
-        <h2>Customer Reviews</h2>
-    
-        <form action="/review" method="post" class="review-form">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-    
-            <label for="rating">Your Rating:</label><br>
-            <select id="rating" name="rating" required>
-                <option value="1">1 Star</option>
-                <option value="2">2 Stars</option>
-                <option value="3">3 Stars</option>
-                <option value="4">4 Stars</option>
-                <option value="5">5 Stars</option>
-            </select><br><br>
-    
-            <label for="comment">Your Review:</label><br>
-            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-    
-            <input type="submit" value="Submit Review" class="submit-button">
-        </form>
-    
-        <h3>Recent Reviews:</h3>
-        <div id="reviews">
-            {% for review in reviews %}
-            <div class="review">
-                <h4>{{ review.name }}</h4>
-                <p>Rating: {{ review.rating }} Stars</p>
-                <p>{{ review.comment }}</p>
-            </div>
-            {% endfor %}
+        <h2>Leave a Review</h2>
+
+    <div>
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
         </div>
+        <div class="form-group">
+            <label>Rating:</label>
+            <span class="star" onclick="setRating(1)">★</span>
+            <span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span>
+            <span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+        </div>
+        <div class="form-group">
+            <textarea id="review" placeholder="Write your review..." required></textarea>
+        </div>
+        <button onclick="submitReview()">Submit Review</button>
+    </div>
+
+    <h2>Reviews</h2>
+    <div id="reviews"></div>
     </main>
 </section>
 <section class="testimonial-section" style="background: linear-gradient(135deg, #046f36, #fae1dd); padding: 50px; text-align: center;">
@@ -118,6 +110,57 @@
         </div>
     </div>
 </section>
+
+<script>
+    let selectedRating = 0;
+
+    function setRating(rating) {
+        selectedRating = rating;
+        let stars = document.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.style.color = index < rating ? 'gold' : 'gray';
+        });
+    }
+
+    function submitReview() {
+        let name = document.getElementById('name').value.trim();
+        let reviewText = document.getElementById('review').value.trim();
+
+        if (!name || !reviewText || selectedRating === 0) {
+            alert("Please fill out all fields and select a rating.");
+            return;
+        }
+
+        let review = { name, rating: selectedRating, text: reviewText, date: new Date().toLocaleString() };
+
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push(review);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        displayReviews();
+        document.getElementById('name').value = '';
+        document.getElementById('review').value = '';
+        setRating(0);
+    }
+
+    function displayReviews() {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        let reviewContainer = document.getElementById('reviews');
+        reviewContainer.innerHTML = '';
+
+        reviews.forEach(review => {
+            reviewContainer.innerHTML += `
+                <div class="review-box">
+                    <strong>${review.name}</strong> (${review.date})<br>
+                    ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                    <p>${review.text}</p>
+                </div>
+            `;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", displayReviews);
+</script>
 
     <script>
 

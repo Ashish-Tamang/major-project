@@ -1,22 +1,24 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-# List to store reviews
+# Temporary storage for reviews (later, we can use a database)
 reviews = []
 
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('review.html')
+    return render_template("Review.html", reviews=reviews)
 
-@app.route('/review', methods=['GET', 'POST'])
-def review():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        rating = request.form.get('rating')
-        comment = request.form.get('comment')
-        reviews.append({'name': name, 'rating': rating, 'comment': comment})
-    return render_template('review.html', reviews=reviews)
+@app.route("/review", methods=["POST"])
+def submit_review():
+    name = request.form["name"]
+    rating = request.form["rating"]
+    comment = request.form["comment"]
 
-if __name__ == '__main__':
+    # Save the review in a list
+    reviews.append({"name": name, "rating": rating, "comment": comment})
+
+    return redirect("/")  # Redirect to the home page
+
+if __name__ == "__main__":
     app.run(debug=True)
